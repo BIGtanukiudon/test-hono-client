@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - aws codeartifact login --tool npm --repository test-deno-hono-schema --domain test-deno-hono-schema --domain-owner $DOMAIN_OWNER --region ap-northeast-1
+        - aws codeartifact login --tool npm --repository test-deno-hono-schema --domain test-deno-hono-schema --domain-owner $DOMAIN_OWNER --region ap-northeast-1 --namespace test-deno-hono-schema
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
